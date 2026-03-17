@@ -14,8 +14,8 @@ async function loadActivities() {
 
   try {
     const [actRes, trRes] = await Promise.all([
-      fetch("http://clublywebsite.runasp.net/api/Activities"),
-      fetch("http://clublywebsite.runasp.net/api/Trainers")
+      fetch("https://clublywebsite.runasp.net/api/Activities"),
+      fetch("https://clublywebsite.runasp.net/api/Trainers")
     ]);
 
     const data     = actRes.ok ? await actRes.json() : [];
@@ -76,7 +76,7 @@ function renderActivities(list) {
     const imgUrl  = a.ImageUrl    || a.imageUrl    || null;
 
     const imgStyle = imgUrl
-      ? `background-image:url('http://clublywebsite.runasp.net${imgUrl}');`
+      ? `background-image:url('https://clublywebsite.runasp.net${imgUrl}');`
       : `background:linear-gradient(135deg,#0d1b2a,#1e3a5f);`;
 
     const priceBadge = price != null
@@ -198,7 +198,7 @@ async function openActivityGroupPicker(activityId, activityName) {
   new bootstrap.Modal(document.getElementById('actPickerModal')).show();
 
   try {
-const res  = await fetch('http://clublywebsite.runasp.net/api/ActivityGroups');
+const res  = await fetch('https://clublywebsite.runasp.net/api/ActivityGroups');
     const all  = res.ok ? await res.json() : [];
 
   const groups = all.filter(g => {
