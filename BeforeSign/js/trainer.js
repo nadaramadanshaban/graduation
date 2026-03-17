@@ -1,6 +1,6 @@
 // ── Trainer Page JS ─────────────────────────────────────────────────────────
-const TRAINER_API  = 'http://clublywebsite.runasp.net/api/Trainers';
-const ACTIVITY_API = 'http://clublywebsite.runasp.net/api/Activities';
+const TRAINER_API  = 'https://clublywebsite.runasp.net/api/Trainers';
+const ACTIVITY_API = 'https://clublywebsite.runasp.net/api/Activities';
 
 document.addEventListener('DOMContentLoaded', () => {
   loadTrainers();
@@ -215,7 +215,7 @@ function trainerCardHtml(t, i, palette) {
   const exp       = t.YearsOfExperience ?? t.yearsOfExperience ?? null;
   const email     = t.Email  || t.email  || null;
   const phone     = t.Phone  || t.phone  || null;
-  const imgSrc    = (t.ImageUrl || t.imageUrl) ? 'http://clublywebsite.runasp.net' + (t.ImageUrl || t.imageUrl) : null;
+  const imgSrc    = (t.ImageUrl || t.imageUrl) ? 'https://clublywebsite.runasp.net' + (t.ImageUrl || t.imageUrl) : null;
   const rating    = (t.Rating || t.rating) ? parseFloat(t.Rating || t.rating) : null;
   const color     = palette[i % palette.length];
   const initials  = fullName.split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase();
